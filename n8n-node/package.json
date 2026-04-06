@@ -1,0 +1,5 @@
+{
+  "name": "n8n-nodes-retell-proof",
+  "version": "1.0.0",
+  "main": "RetellTrigger.node.ts"
+}

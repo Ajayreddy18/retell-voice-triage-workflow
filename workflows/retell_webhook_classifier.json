@@ -1,0 +1,43 @@
+{
+  "name": "Retell Webhook Classifier",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "retell-trigger",
+        "httpMethod": "POST"
+      },
+      "id": "WebhookNode",
+      "name": "Incoming Voice Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [200, 300]
+    },
+    {
+      "parameters": {
+        "url": "http://127.0.0.1:8000/voice-webhook",
+        "method": "POST",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{$json}}"
+      },
+      "id": "HTTPNode",
+      "name": "Send to FastAPI Classifier",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [500, 300]
+    }
+  ],
+  "connections": {
+    "Incoming Voice Webhook": {
+      "main": [
+        [
+          {
+            "node": "Send to FastAPI Classifier",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

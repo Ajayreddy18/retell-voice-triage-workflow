@@ -1,0 +1,13 @@
+{
+  "name": "Retell Voice To CRM",
+  "nodes": [
+    {
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook"
+    },
+    {
+      "name": "Google Sheets",
+      "type": "n8n-nodes-base.googleSheets"
+    }
+  ]
+}
