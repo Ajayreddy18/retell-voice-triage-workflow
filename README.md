@@ -6,7 +6,7 @@ This project demonstrates how to build an **event-driven AI workflow** for start
 
 ---
 
-## 🚀 What it does
+##  What it does
 
 When a voice transcript is received from a Retell AI call agent:
 
@@ -67,19 +67,26 @@ JSON Response
 ##  Project Structure
 
 ```text
-retell-voice-triage-workflow/
+retell-integration-proof/
 │
 ├── server/
-│   ├── app.py              # FastAPI app
-│   ├── classifier.py       # intent + urgency logic
-│   ├── sheets.py           # Google Sheets append helper
-│   └── service_account.json
+│   ├── app.py
+│   ├── classifier.py
+│   ├── sheets.py
+│   ├── requirements.txt
+│   └── .env.example
+│
+├── mcp-server/
+│   ├── server.py
+│   └── requirements.txt
+│
+├── n8n-node/
+│   ├── RetellTrigger.node.ts
+│   ├── package.json
+│   └── tsconfig.json
 │
 ├── workflows/
-│   └── n8n-retell.json     # exportable n8n workflow
-│
-├── demo/
-│   └── loom-demo-link.txt
+│   └── retell_voice_to_sheet.json
 │
 └── README.md
 ```
